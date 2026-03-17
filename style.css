@@ -1,1 +1,41 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:hsl(219, 100%, 50%);
+}
+
+
+header{
+    background-color:#0d91e9;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+
+main{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:40px;
+}
+
+
+.card{
+    background:#910345;
+    border-radius:10px;
+    padding:20px;
+    width:200px;
+    text-align:center;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card h2{
+    margin-bottom:10px;
+}
