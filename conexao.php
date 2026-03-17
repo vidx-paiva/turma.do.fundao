@@ -1,14 +1,6 @@
 <?php
 include 'config.php';
-
-$nome = $_POST['campo'];
-
-$sql = "INSERT INTO tbl_maquinas (eqpmt_nome) VALUES (:nome)";
-
-$stmt = $conn->prepare($sql);
-
-
-$stmt->execute([
-    ':nome' => $nome
-]);
+$dados = json_decode(file_get_contents("php://input"), true);
+$maquina = $dados["maquina"];
+$status = $dados["status"];
 ?>
