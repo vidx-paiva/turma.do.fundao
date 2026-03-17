@@ -1,0 +1,18 @@
+USE db_resendetech;
+CREATE TABLE tbl_maquinas (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    status_operacional int
+);
+
+Alter table tbl_maquinas
+ADD data_registro timestamp default current_timestamp,
+add severidade tinyint check (severidade between 1 and 3);
+
+CREATE USER 'app_resende'@'localhost' IDENTIFIED BY 'fundao';
+GRANT SELECT, INSERT ON db_resendetech.tbl_maquinas 
+TO 'app_resende'@'localhost';
+
+FLUSH PRIVILEGES;
+
+SHOW GRANTS FOR 'app_resende'@'localhost';
